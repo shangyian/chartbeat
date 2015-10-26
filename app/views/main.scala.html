@@ -1,0 +1,30 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+
+        <script>
+
+        /*(function poll() {
+        setTimeout(function() {
+        jsRoutes.controllers.Application.index().ajax({ success: function(data) {
+        $("#status").html("OKKK");
+        alert("ok!!");
+        poll();
+        }, dataType: "json" });
+        }, 30000);
+        })();*/
+
+        </script>
+    </head>
+    <body>
+        @content
+    </body>
+</html>

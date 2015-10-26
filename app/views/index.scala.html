@@ -1,0 +1,18 @@
+@(visits: List[((String, String), PageMetrics)])
+
+@main("Page Metrics") {
+    <p id="status"></p>
+    <table>
+        <tr><th>URL</th><th>Visits</th><th>Links</th><th>Read</th><th>Social</th><th>Search</th><th>Number of References</th></tr>
+        @visits.map { case (info, metrics) =>
+            <tr><td><a href="http://gizmodo.com@info._1">@info._2</a></td>
+                <td>@metrics.visits</td>
+                <td>@metrics.links</td>
+                <td>@metrics.read</td>
+                <td>@metrics.social</td>
+                <td>@metrics.search</td>
+                <td>@metrics.numRefs</td>
+                <td></td></tr>
+        }
+    </table>
+}
